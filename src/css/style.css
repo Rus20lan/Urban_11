@@ -1,0 +1,299 @@
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
+
+header {
+  max-height: 20vh;
+  background-color: blueviolet;
+}
+h1 {
+  font-size: 3em;
+}
+h1,
+h5 {
+  margin: 0;
+}
+.header__container {
+  height: 100%;
+}
+.header__app-name-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.main__input_add {
+  margin-top: 5%;
+}
+.main__label_add {
+  font-size: 2rem;
+}
+.main__btn_add {
+  margin-top: 15px;
+}
+.tabs .tab a {
+  color: rgba(38, 166, 154, 0.7);
+  letter-spacing: 0.1rem;
+  /*Custom Text Color*/
+}
+.tabs .tab a:hover {
+  background-color: rgba(38, 166, 154, 0.7);
+  color: #000;
+} /*Text color on hover*/
+.tabs .tab a.active:focus {
+  background-color: rgba(38, 166, 154, 0.3);
+}
+.tabs .tab a.active {
+  background-color: rgba(38, 166, 154, 0.3);
+  color: #000;
+} /*Background and text color when a tab is active*/
+.tabs .indicator {
+  background-color: rgba(38, 166, 154, 0.7);
+} /*Color of underline*/
+.main__tabs_ul {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  /* max-width: auto; */
+  width: 100%;
+}
+.main__tabs_wrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.main__tab {
+  margin-left: 0;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+.main__tab a {
+  padding: 0 5% !important;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex !important;
+}
+.main__tab a > span {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /* line-height: 30px; */
+  max-width: 30px;
+  width: 100%;
+  margin: 0;
+}
+.main__tabs_window_wrapper {
+  margin-top: 20px;
+}
+.main__tab_window {
+  height: 500px;
+  max-height: 500px;
+  border-radius: 25px;
+}
+#current,
+#completed,
+#deleted {
+  overflow: auto;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+.list__tasks li {
+  /* padding-top: 0.5rem; */
+  font-size: 1.8rem;
+}
+.task__btns {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.task__btns a {
+  display: none;
+  /* margin: 1px; */
+  margin: 0 1px;
+}
+.task__li {
+  margin: 5px auto;
+  max-height: 34px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #f7f7f7;
+}
+.task__li p {
+  height: 100%;
+}
+.task__li:hover a {
+  display: block;
+  -webkit-animation: fade-in 1s ease;
+  animation: fade-in 1s ease;
+}
+.task__p {
+  margin: 0;
+  /* width: 100%;
+  max-width: auto; */
+}
+
+.my_modal {
+  width: 20%;
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+
+/*  fontSize: */
+.xs {
+  font-size: 0.75rem;
+}
+.sm {
+  font-size: 0.875rem;
+}
+.base {
+  font-size: 1rem;
+}
+.lg {
+  font-size: 1.125rem;
+}
+.xl {
+  font-size: 1.25rem;
+}
+.xl2 {
+  font-size: 1.5rem;
+}
+.xl3 {
+  font-size: 1.875rem !important;
+}
+.xl4 {
+  font-size: 2.25rem;
+}
+.xl5 {
+  font-size: 3rem;
+}
+.xl6 {
+  font-size: 4rem;
+}
+.fs1 {
+  font-size: 1vw;
+}
+.fs2 {
+  font-size: 1.4vw;
+}
+.fs3 {
+  font-size: 1.6vw;
+}
+.fs4 {
+  font-size: 1.8vw;
+}
+.fs5 {
+  font-size: 2vw;
+}
+.fs6 {
+  font-size: 2.2vw;
+}
+.fs7 {
+  font-size: 2.4vw;
+}
+.fs8 {
+  font-size: 2.6vw;
+}
+.fs9 {
+  font-size: 2.8vw;
+}
+
+/* Fade In */
+.fade-in {
+  -webkit-animation: fade-in 1s ease;
+  animation: fade-in 1s ease;
+  opacity: 1;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade Out */
+.fade-out {
+  -webkit-animation: fade-out 1s ease;
+  animation: fade-out 1s ease;
+  opacity: 0;
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    opacity: 1;
+    /* transform: scale(3); */
+  }
+
+  to {
+    opacity: 0;
+    /* transform: scale(0); */
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    /* transform: scale(3); */
+  }
+
+  to {
+    opacity: 0;
+    /* transform: scale(0); */
+  }
+}

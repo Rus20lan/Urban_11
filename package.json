@@ -1,0 +1,14 @@
+{
+  "name": "urban_11",
+  "version": "1.0.0",
+  "description": "Практическая работа по модулю \"Функции. Объекты. DOM\"",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruslan Sadikov",
+  "license": "ISC",
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2"
+  }
+}

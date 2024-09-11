@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Scheduler</title>
+    <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header__container container">
+        <div class="header__app-name-wrapper">
+          <h1 class="center white-text">Task Scheduler</h1>
+          <h5 class="light">Your personal assistant</h5>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <!-- Page Content goes here -->
+        <div class="main__input_add">
+          <div class="row">
+            <form id="formElem">
+              <div class="input-field col s10">
+                <label for="task" class="main__label_add">Enter new task</label>
+                <input name="task" type="text" class="validate xl3" />
+              </div>
+              <div class="col s2">
+                <button
+                  type="submit"
+                  class="waves-effect waves-light btn main__btn_add"
+                >
+                  Add
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="main__tabs_tasks">
+            <div class="row">
+              <div class="col s12">
+                <div class="container main__tabs_wrapper z-depth-3">
+                  <ul id="tabs-swipe-demo" class="tabs main__tabs_ul">
+                    <li class="tab s3 main__tab">
+                      <a href="#current"
+                        >Сurrent tasks
+                        <span class="badge current_badge">00</span></a
+                      >
+                    </li>
+                    <li class="tab s3 main__tab">
+                      <a href="#completed"
+                        >Сompleted tasks
+                        <span class="badge completed_badge">00</span></a
+                      >
+                    </li>
+                    <li class="tab s3 main__tab">
+                      <a href="#deleted"
+                        >Deleted tasks
+                        <span class="badge deleted_badge">00</span></a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="main__tabs_window_wrapper">
+                <div id="current" class="col s12 main__tab_window z-depth-2">
+                  <div class="container">
+                    <ul id="ct_list" class="list__tasks"></ul>
+                  </div>
+                </div>
+                <div id="completed" class="col s12 main__tab_window z-depth-2">
+                  <div class="container">
+                    <ul id="comt_list" class="list__tasks"></ul>
+                  </div>
+                </div>
+                <div id="deleted" class="col s12 main__tab_window z-depth-2">
+                  <div class="container">
+                    <ul id="dt_list" class="list__tasks"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="fixed-action-btn">
+        <a
+          class="btn-floating btn-large waves-effect waves-light red"
+          data-clear
+          ><i class="material-icons">clear</i></a
+        >
+      </div>
+    </footer>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal my_modal">
+      <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Agree</a
+        >
+      </div>
+    </div>
+    <script type="text/javascript" src="./materialize.min.js"></script>
+  </body>
+</html>
