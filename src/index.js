@@ -148,6 +148,7 @@
     removeLi(event);
   });
 
+  let flag = '';
   let observerCurrentTasks = new MutationObserver((mutationRecords) => {
     const obj = JSON.parse(localStorage.tasks);
     mutationRecords.forEach((mutationRecord) => {
@@ -184,13 +185,16 @@
           );
         }
       } else if (mutationRecord.type === 'characterData') {
-        if (mutationRecord.target.data !== '') {
-          obj.current[obj.current.indexOf(mutationRecord.oldValue)] =
-            mutationRecord.target.data;
-        } else {
+        let taskNew = mutationRecord.target.data,
+          taskOld = mutationRecord.oldValue;
+        if (taskNew !== '') {
+          obj.current[obj.current.indexOf(taskOld)] = taskNew;
+        } else if (taskNew === '') {
           console.log(mutationRecord);
-          obj.current[obj.current.indexOf(mutationRecord.oldValue)] =
-            mutationRecord.oldValue;
+          flag = taskOld;
+        }
+        if (taskOld === '' && taskNew !== '') {
+          obj.current[obj.current.indexOf(flag)] = taskNew;
         }
       }
       checkingBadge(obj, [currentBadge, completedBadge, deletedBadge]);
