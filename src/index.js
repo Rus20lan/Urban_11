@@ -15,25 +15,32 @@
       });
     };
 
-  // Инициализация хранилища tasks в localStorage
-  localStorage.tasks ??= JSON.stringify({
-    current: [],
-    completed: [],
-    del: [],
-  });
-
   function isNotEmptyLocalStorage() {
+    // Инициализация хранилища tasks в localStorage, если его там нет
+    localStorage.tasks ??= JSON.stringify({
+      current: [],
+      completed: [],
+      del: [],
+    });
     const tasks = JSON.parse(localStorage.tasks);
-    tasks.current.forEach((task) => {
-      addNewTaskInTasksList({ task });
-    });
-    tasks.completed.forEach((task) => {
-      addTaskInDelOrComTasksList(task, '#comt_list');
-    });
-    tasks.del.forEach((task) => {
-      addTaskInDelOrComTasksList(task, '#dt_list');
-    });
-    checkingBadge(tasks, [currentBadge, completedBadge, deletedBadge]);
+    if (localStorage.tasks) {
+      if (Array.isArray(tasks.current) && tasks.current.length > 0) {
+        tasks.current.forEach((task) => {
+          addNewTaskInTasksList({ task });
+        });
+      }
+      if (Array.isArray(tasks.completed) && tasks.completed.length > 0) {
+        tasks.completed.forEach((task) => {
+          addTaskInDelOrComTasksList(task, '#comt_list');
+        });
+      }
+      if (Array.isArray(tasks.del) && tasks.del.length > 0) {
+        tasks.del.forEach((task) => {
+          addTaskInDelOrComTasksList(task, '#dt_list');
+        });
+      }
+      checkingBadge(tasks, [currentBadge, completedBadge, deletedBadge]);
+    }
   }
 
   function deleteOrToggleAttContentEditable(elem, toggle = false) {
