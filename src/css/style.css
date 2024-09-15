@@ -140,6 +140,9 @@ h5 {
   /* margin: 1px; */
   margin: 0 1px;
 }
+.task__checkbox {
+  display: none;
+}
 .task__li {
   margin: 5px auto;
   max-height: 34px;

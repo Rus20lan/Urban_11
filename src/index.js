@@ -61,6 +61,7 @@
     const newTask = document.createElement('li');
     newTask.classList.add('task__li');
     newTask.setAttribute('data-value', data.task);
+    newTask.setAttribute('data-id', taskList.querySelectorAll('li').length);
     newTask.innerHTML = `
       <p class="task__p">${data.task}</p>
       <div class="task__btns">
@@ -68,15 +69,27 @@
         <a class="btn-floating btn-small waves-effect waves-light green" data-edit><i class="material-icons">edit</i></a>
         <a class="btn-floating btn-small waves-effect waves-light red" data-delete><i class="material-icons">delete</i></a>
       </div>
+      <div class="task__checkbox">    
+        <label>
+          <input type="checkbox" />
+          <span>Edited</span>
+        </label>
+      </div>
     `;
-    let taskP = newTask.querySelector('.task__p');
+    let taskP = newTask.querySelector('.task__p'),
+      checkboxTask = newTask.querySelector('.task__checkbox'),
+      btnsTask = newTask.querySelector('.task__btns');
+
     taskP.addEventListener('blur', (e) => {
       if (taskP.textContent === '') {
-        taskP.textContent = newTask.getAttribute('data-value');
+        let locTask = JSON.parse(localStorage.tasks);
+        taskP.textContent = locTask.current[+newTask.getAttribute('data-id')];
       } else {
         newTask.setAttribute('data-value', taskP.textContent);
       }
       deleteOrToggleAttContentEditable(e.target, false);
+      checkboxTask.style.display = 'none';
+      btnsTask.style.display = 'flex';
     });
     taskP.addEventListener('dblclick', (e) => {
       deleteOrToggleAttContentEditable(e.target, true);
@@ -86,6 +99,7 @@
         newTask.setAttribute('data-value', taskP.textContent);
       }
     });
+    // console.log(taskList.querySelectorAll('li').length);
     taskList.append(newTask);
   }
   function addTaskInDelOrComTasksList(task, selector) {
@@ -122,7 +136,11 @@
       addTaskInDelOrComTasksList(text, '#dt_list');
       elem.parentNode.removeChild(elem);
     } else if (target.getAttribute('data-edit') === '') {
-      let editElem = target.parentElement.parentElement.querySelector('p');
+      let editElem = target.parentElement.parentElement.querySelector('p'),
+        btnTask = elem.querySelector('.task__btns'),
+        checkboxTask = elem.querySelector('.task__checkbox');
+      btnTask.style.display = 'none';
+      checkboxTask.style.display = 'flex';
       deleteOrToggleAttContentEditable(editElem, true);
     } else if (target.getAttribute('data-completed') === '') {
       addTaskInDelOrComTasksList(text, '#comt_list');
